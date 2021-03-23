@@ -21,6 +21,6 @@ class TweetsController < ApplicationController
   end
   private
     def tweet_params
-      params.require(:tweet).permit(:body) # tweetモデルのカラムのみを許可
+      params.require(:tweet).permit(:content) # tweetモデルのカラムのみを許可
     end
 end
