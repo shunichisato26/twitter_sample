@@ -55,8 +55,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Railsコンソール実行結果が個人的にこちらの方が見やすいので採用
 gem 'pry-rails'
 
+# ユーザー認証機能として採用
 gem 'devise'
 
-gem 'pry-byebug'
+# 後々使用する可能性あり、今は使い方がよくわかっていないのでコメントアウト
+# gem 'pry-byebug'
