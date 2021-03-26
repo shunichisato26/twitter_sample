@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+  get 'likes/destroy'
   root 'tweets#index'
 
   devise_for :users
