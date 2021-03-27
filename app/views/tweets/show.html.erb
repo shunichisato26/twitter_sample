@@ -1,6 +1,4 @@
-<h1>つぶやき詳細</h1>
-
-<p><%= @user.email %>→後ほどユーザー名表示に変更</p>
+<p><%= current_user.email %></p>
 <p><%= @tweet.content %></p>
 <p>いいね数: <%= @tweet.likes.count %></p>
 
