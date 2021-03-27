@@ -2,6 +2,17 @@
 
 <% @tweets.each do |tweet| %>
   <hr>
-  <p><%= link_to tweet.user.email, user_path(tweet.user.id) %>→後ほどユーザー名表示に変更</p>
+  <p><%= link_to tweet.user.email, user_path(tweet.user.id) %></p>
   <p><%= link_to tweet.content, tweet_path(tweet.id) %></p>
+  <h2>つぶやく</h2>
+  <%= form_for @tweet do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+  <hr>
+  <h2>つぶやき一覧</h2>
+  <% @tweets.each do |tweet| %>
+    <a href="/users/<%= tweet.user.id %>"><%= tweet.user.email %></a>
+    <a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a>
+    (<%= tweet.liked_users.count %>)
+  <% end %>
 <% end %>

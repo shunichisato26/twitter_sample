@@ -2,7 +2,13 @@
 <hr>
 <p><span>email: </span><%= @user.email %></p>
 
-<% @tweets.each do |tweet| %>
+<h2>つぶやき内容</h2>
+<% @user.tweets.each do |tweet| %>
+  <a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a>
   <hr>
-  <p><span>ツイート内容：</span><%= link_to tweet.content, tweet_path(tweet.id) %></p>
+<% end %>
+<h3>いいねしているつぶやき</h3>
+<% @user.liked_tweets.each do |tweet| %>
+  <%= tweet.user.email %>
+  <%= tweet.content %>
 <% end %>

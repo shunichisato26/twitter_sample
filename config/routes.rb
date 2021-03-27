@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'likes/create'
-  get 'likes/destroy'
   root 'tweets#index'
 
   devise_for :users
-  resources :users
-  resources :tweets
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index, :show]
+  resources :tweets, only: [:index, :show, :create] do
+    resources :likes, only: [:create, :destroy]
+  end
+
 end

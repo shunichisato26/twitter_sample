@@ -1,5 +1,15 @@
 <h1>つぶやき詳細</h1>
 
-
-<p><span><%= @user.email %>→後ほどユーザー名表示に変更</p>
+<p><%= @user.email %>→後ほどユーザー名表示に変更</p>
 <p><%= @tweet.content %></p>
+<p>いいね数: <%= @tweet.likes.count %></p>
+
+<% if current_user.already_liked?(@tweet) %>
+  <%= button_to 'いいね取消', tweet_like_path(@tweet), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', tweet_likes_path(@tweet) %>
+<% end %>
+<p>いいねしたユーザー</p>
+<% @tweet.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>

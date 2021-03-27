@@ -11,8 +11,8 @@
   </head>
 
   <body>
-        <% if user_signed_in? %>  <!-- deviseのメソッドで、「ログインしているかしていないかでtrue or falseを返す」メソッド -->
-          <%= link_to "新規投稿", new_tweet_path %>
+        <% if user_signed_in? %>
+          <%#<%= link_to "新規投稿", new_tweet_path %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <%= link_to "プロフィール", user_path(current_user.id) %>
         <% else %>
