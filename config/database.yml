@@ -13,6 +13,7 @@ test:
 
 production:
   <<: *default
-  database: twitter_sample_production
-  username: twitter_sample
-  password: <%= ENV['TWITTER_SAMPLE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
