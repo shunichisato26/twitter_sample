@@ -1,5 +1,5 @@
 {
-  "name": "twitter-test",
+  "name": "twitter-sample",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
