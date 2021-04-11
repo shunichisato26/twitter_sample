@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.7.2'
+ruby '3.0.1'
 
 # ユーザー認証機能として使用
 gem 'devise'
